@@ -24,8 +24,10 @@ app.get('/:id', (req, res) => {
     } 
 });
 
-
+console.log("listen");
 app.listen(8081, () => console.log('Started Listening'));
+
+
 
 // function handleServer(req, res) {
 //     if (req.url === '/welcome'){

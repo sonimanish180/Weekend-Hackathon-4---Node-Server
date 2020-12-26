@@ -1,4 +1,5 @@
-var express = require("express");
+const http = require('http');
+const httpServer = http.createServer(handleServer);
 
 
 function handleServer (req, res) {

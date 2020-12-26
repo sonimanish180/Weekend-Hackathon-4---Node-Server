@@ -11,7 +11,7 @@ function handleServer (req, res) {
         res.end();
     }
 
-    if (req.url === '/contact') {
+    else if (req.url === '/contact') {
         const contact =  {
             phone: '18602100000',
             email: 'guestcaredominos@jublfood.com'
@@ -21,13 +21,17 @@ function handleServer (req, res) {
         res.write(JSON.stringify(contact));
         res.end();
     }
-
-    
-    res.write("404");  
-    res.statusCode=404;
-    res.end();
+    else {
+        res.write("404");  
+        res.statusCode=404;
+        res.end();
+    }    
     
 }
+
+module.exports = httpServer;
+console.log("Listening...");
+httpServer.listen(8081);
 
 // app.get('/welcome', (req, res) => {    
 //     res.status(200).send('Welcome to Dominos!');
@@ -70,6 +74,3 @@ function handleServer (req, res) {
 //     }
 // }
 
-module.exports = httpServer;
-console.log("Listening...");
-httpServer.listen(8081);

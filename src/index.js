@@ -1,6 +1,5 @@
-var http = require("http");
+var express = require("express");
 
-const httpServer = http.createServer(handleServer);
 
 function handleServer (req, res) {
     if (req.url === '/welcome') {
@@ -16,7 +15,7 @@ function handleServer (req, res) {
             phone: '18602100000',
             email: 'guestcaredominos@jublfood.com'
         }
-        // res.status(200).send(contact);
+        // res.status(200).send(contact);//
         res.statusCode=200;
         res.write(JSON.stringify(contact));
         res.end();

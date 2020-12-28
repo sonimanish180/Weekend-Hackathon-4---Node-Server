@@ -6,8 +6,9 @@ function handleServer (req, res) {
     if (req.url === '/welcome') {
         // res.statusCode = 200;
         // res.statusCode = 200;
+        res.writeHead(200, {'Content-Type': 'text/html'});
         res.write('Welcome to Dominos!');
-        res.statusCode=200;
+        // res.statusCode=200;
         res.end();
     }
 
@@ -17,13 +18,16 @@ function handleServer (req, res) {
             email: 'guestcaredominos@jublfood.com'
         }
         // res.status(200).send(contact);//
-        res.statusCode=200;
+        // res.statusCode=200;
+        res.writeHead(200, {'Content-Type': 'application/json'});
         res.write(JSON.stringify(contact));
         res.end();
     }
     else {
-        res.write("404");  
-        res.statusCode=404;
+        res.writeHead(404, {'Content-Type': 'text/html'});
+        res.write("404"); 
+
+        // res.statusCode=404;
         res.end();
     }    
     

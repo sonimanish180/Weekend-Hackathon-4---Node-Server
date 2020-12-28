@@ -6,7 +6,7 @@ function handleServer (req, res) {
     if (req.url === '/welcome') {
         // res.statusCode = 200;
         // res.statusCode = 200;
-        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.writeHead(200, {'Content-Type': 'text/plain'});
         res.write('Welcome to Dominos!');
         // res.statusCode=200;
         res.end();
